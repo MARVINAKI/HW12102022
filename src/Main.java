@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    int[] arr = generateRandomArray();
+
 
     public static int[] generateRandomArray() {
         java.util.Random random = new java.util.Random();
@@ -17,10 +17,12 @@ public class Main {
 
     public static void main(String[] args) {
 
+        int[] arr = generateRandomArray();
+
 
         //Exercise 1
         int sum = 0;
-        for (int costsDay : generateRandomArray()) {
+        for (int costsDay : arr) {
             sum += costsDay;
         }
         System.out.println("Сумма трат за месяц составила " + sum + " рублей");
@@ -28,9 +30,9 @@ public class Main {
 
 
         //Exercise 2
-        int max = generateRandomArray()[0];
-        int min = generateRandomArray()[0];
-        for (int costsDay : generateRandomArray()) {
+        int max = arr[0];
+        int min = arr[0];
+        for (int costsDay : arr) {
             max = costsDay > max ? costsDay : max;
             min = costsDay < min ? costsDay : min;
         }
@@ -40,7 +42,7 @@ public class Main {
 
 
         //Exercise 3
-        double sumMid = (double) sum / generateRandomArray().length;
+        double sumMid = (double) sum / arr.length;
         System.out.format("Средняя сумма трат за месяц составила %.2f рублей \n", sumMid);
         System.out.println();
 
